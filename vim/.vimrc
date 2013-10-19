@@ -15,7 +15,7 @@ set hlsearch
 set incsearch
 set showmatch
 
-:colorscheme desert
+:colorscheme wombat256
 :set mouse=a
 autocmd BufWritePre *.py :%s/\s\+$//e
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
