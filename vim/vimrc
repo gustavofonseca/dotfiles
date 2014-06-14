@@ -1,3 +1,39 @@
+" ----------------------------------------
+" Vundle Config
+"
+" https://github.com/gmarik/Vundle.vim
+" https://github.com/spf13/spf13-vim
+" ----------------------------------------
+
+" Preconditions {
+    set nocompatible
+    filetype off
+    
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+" }
+
+" Vundle configuration {
+    call vundle#begin()
+
+    " Deps {
+        Plugin 'gmarik/Vundle.vim'
+    " }
+
+    " General {
+        Plugin 'scrooloose/nerdtree'
+        Plugin 'scrooloose/syntastic'
+    " }
+
+    call vundle#end()
+" }
+
+" Postconditions {
+    filetype plugin indent on
+" }
+
+" ----------------------------------------
+
 set backspace=indent,eol,start
 
 set gfn=Monaco:h14
