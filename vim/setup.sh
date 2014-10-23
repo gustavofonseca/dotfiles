@@ -24,3 +24,10 @@ fi
 ln -s $DIR/vim ~/.vim
 ln -s $DIR/vimrc ~/.vimrc
 
+# ------------------------------
+# Installing Vundle
+# ------------------------------
+git submodule init && git submodule update
+
+vim +PluginInstall +qall
+
