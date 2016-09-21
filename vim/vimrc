@@ -46,7 +46,8 @@ set modeline
 set autoindent
 set smartindent
 set number
-set colorcolumn=80
+set colorcolumn=81
+set autochdir
 
 set hlsearch
 set incsearch
