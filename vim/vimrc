@@ -52,6 +52,7 @@ set hlsearch
 set incsearch
 set showmatch
 
+:syntax on
 :colorscheme wombat256
 :set mouse=a
 autocmd BufWritePre *.py :%s/\s\+$//e
