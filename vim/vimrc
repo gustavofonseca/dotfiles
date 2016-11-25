@@ -23,6 +23,7 @@
     " General {
         Plugin 'scrooloose/nerdtree'
         Plugin 'scrooloose/syntastic'
+        Plugin 'editorconfig/editorconfig-vim'
     " }
 
     call vundle#end()
