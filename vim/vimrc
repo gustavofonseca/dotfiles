@@ -21,6 +21,7 @@
     " }
 
     " General {
+        Plugin 'vim-airline/vim-airline'
         Plugin 'scrooloose/nerdtree'
         Plugin 'scrooloose/syntastic'
         Plugin 'editorconfig/editorconfig-vim'
@@ -35,45 +36,123 @@
 
 " ----------------------------------------
 
-set backspace=indent,eol,start
+" General {
 
-"set gfn=Monaco:h13
-set gfn=Mononoki:h13
-set tabstop=4
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set ruler
-set modeline
-set autoindent
-set smartindent
-set number
-set colorcolumn=81
-set autochdir
+    " Sets how many lines of history VIM has to remember
+    set history=700
 
-set hlsearch
-set incsearch
-set showmatch
-
-:syntax on
-:colorscheme wombat256
-:set mouse=a
-autocmd BufWritePre *.py :%s/\s\+$//e
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-let NERDTreeShowHidden = 1
-
-nnoremap H gT
-nnoremap L gt
-
-" Syntastic {
-"    set statusline+=%#warningmsg#
-"    set statusline+=%{SyntasticStatuslineFlag()}
-"    set statusline+=%*
-"
-"    let g:syntastic_always_populate_loc_list = 1
-"    let g:syntastic_auto_loc_list = 1
-"    let g:syntastic_check_on_open = 0
-"    let g:syntastic_check_on_wq = 0
+    " Set to auto read when a file is changed from the outside
+    set autoread
 " } 
+
+" VIM user interface {
+    
+    " Turn on the wild menu 
+    set wildmenu
+
+    " Always show current position
+    set ruler
+
+    " Height of the command bar
+    set cmdheight=2
+
+    " A buffer becomes hidden when it is abandoned
+    set hid
+
+    " Configure backspace so it acts as it should act
+    set backspace=eol,start,indent
+    set whichwrap+=<,>,h,l
+
+    " Ignore case when searching
+    set ignorecase
+
+    " When searching try to be smart about cases 
+    set smartcase
+
+    " Highlight search results
+    set hlsearch
+
+    " Makes search act like search in modern browsers
+    set incsearch
+
+    " Don't redraw while executing macros (good performance config)
+    set lazyredraw
+
+    " For regular expressions turn magic on
+    set magic
+
+    " Show matching brackets when text indicator is over them
+    set showmatch
+    " How many tenths of a second to blink when matching brackets
+    set mat=2
+
+    " Show line numbers
+    set number
+
+    " Highlight line boundaries 
+    set colorcolumn=81
+
+    " Remap tab switching commands
+    nnoremap H gT
+    nnoremap L gt
+
+    " No annoying sound on errors
+    set noerrorbells
+    set novisualbell
+    set t_vb=
+    set tm=500
+
+    " Enable mouse
+    set mouse=a
+" }
+
+" Colors and fonts {
+
+    " Enable syntax highlight
+    syntax on
+
+    set gfn=Mononoki:h13
+
+    colorscheme wombat256
+
+    " Set utf8 as standard encoding and en_US as the standard language
+    set encoding=utf8
+
+    " Use Unix as the standard file type
+    set ffs=unix,dos,mac
+" }
+
+" Files, backups and undo {
+
+    " Turn backup off, since most stuff is in SVN, git et.c anyway...
+    set nobackup
+    set nowb
+    set noswapfile
+" }
+
+" Text, tab and indent related {
+
+    " 1 tab == 4 spaces
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+
+    " Spaces instead of tabs
+    set expandtab
+
+    set autoindent
+    set smartindent
+
+" }
+
+" Status line {
+    " Always show the status line
+    set laststatus=2
+
+" }
+
+" Nerdtree {
+    let NERDTreeShowHidden=1
+    map <C-n> :NERDTreeToggle<CR>
+" }
 
