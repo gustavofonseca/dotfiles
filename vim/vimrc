@@ -23,7 +23,7 @@
     " General {
         Plugin 'vim-airline/vim-airline'
         Plugin 'scrooloose/nerdtree'
-        Plugin 'scrooloose/syntastic'
+        Plugin 'w0rp/ale'
         Plugin 'editorconfig/editorconfig-vim'
         Plugin 'scrooloose/nerdcommenter'
         Plugin 'tpope/vim-surround'
@@ -106,6 +106,12 @@
 
     " Enable mouse
     set mouse=a
+
+    " Folding based on text indentation
+    set foldmethod=indent
+    set foldnestmax=15
+    set nofoldenable
+    set foldlevel=1
 " }
 
 " Colors and fonts {
@@ -158,3 +164,7 @@
     map <C-n> :NERDTreeToggle<CR>
 " }
 
+" Ale - asynchronous lint engine {
+" https://vimawesome.com/plugin/ale
+    let g:airline#extensions#ale#enabled = 1
+"  }
